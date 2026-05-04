@@ -7,5 +7,6 @@ Interactive prototype for Ogilvy C2 employees to browse 2026 SMART career goal e
 - `index.html` - prototype page structure
 - `styles.css` - visual system and responsive layout
 - `app.js` - goal data, filtering, planner interactions, and scroll motion
+- `assets/` - web-ready visual assets used by the prototype
 
 Open `index.html` in a browser to run the prototype.

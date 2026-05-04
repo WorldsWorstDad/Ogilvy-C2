@@ -1,81 +1,151 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Creative Career Goals | Ogilvy C2</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Ogilvy C2 • 2026 Planner</p>
-        <h1>Creative Career Goals</h1>
-        <p class="intro">Browse SMART goal examples by role and priority theme, then build a personal 2026 growth plan.</p>
-      </div>
-    </section>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>2026 Creative Career Goals</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#start" aria-label="2026 Creative Career Goals home">
+        <img class="brand-logo" src="assets/c2-red-small.png" alt="Ogilvy C2">
+        <span class="brand-divider"></span>
+        <span>2026 Creative Goals</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#recommendations">Goals</a>
+        <a href="#plan">Plan</a>
+      </nav>
+    </header>
 
-    <section id="recommendations" class="section">
-      <div class="section-header">
-        <h2>Goal Browser</h2>
-        <p class="section-copy">Choose a role and theme to load curated examples you can adapt.</p>
-      </div>
+    <main>
+      <section class="hero" id="start">
+        <div class="hero-copy">
+          <p class="eyebrow">Ogilvy C2 goal setting framework</p>
+          <h1>2026 Career Goals</h1>
+          <p class="intro">Choose your discipline, pick one of the four 2026 themes, and adapt practical SMART goals to fit your career ambition.</p>
+          <div class="hero-actions" aria-label="Start actions">
+            <a class="button primary" href="#recommendations">Find goals</a>
+            <a class="button secondary" href="#plan">Build plan</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Red bullseye target representing focused 2026 career goals">
+          <img src="assets/hero-bullseye-compact.jpg" alt="Red 3D bullseye target with an arrow in the centre">
+        </div>
+      </section>
 
-      <div class="action-row">
-        <label for="role">Role</label>
-        <select id="role">
-          <option>Copywriter</option>
-          <option>Art Director</option>
-          <option>Designer</option>
-          <option>Motion Designer</option>
-        </select>
-      </div>
+      <section class="framework-strip" aria-label="2026 goal areas">
+        <article>
+          <span>01</span>
+          <h2>Born in Culture Impact</h2>
+          <p>Better informed, culturally relevant work and stronger brand or market expertise.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Order Makers</h2>
+          <p>Credible relationships, better questions, proactive briefs, and a clear point of view.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>AI Advantage</h2>
+          <p>AI skills that improve creative quality, speed, learning, and client value.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h2>Core Excellence</h2>
+          <p>A specialist superpower people can rely on and learn from.</p>
+        </article>
+      </section>
 
-      <div class="action-row" aria-label="Theme filters">
-        <button type="button" class="theme-filter active" data-theme="culture">Born in Culture Impact</button>
-        <button type="button" class="theme-filter" data-theme="relationships">Order Makers</button>
-        <button type="button" class="theme-filter" data-theme="ai">AI Advantage</button>
-        <button type="button" class="theme-filter" data-theme="craft">Core Excellence</button>
-      </div>
+      <section class="recommendation-section" id="recommendations">
+        <div class="guidance-header">
+          <div class="section-title">
+            <p class="eyebrow">Goal browser</p>
+            <h2>Goals by discipline<br>and theme</h2>
+            <p class="section-copy">Select a creative discipline, then choose one of the four 2026 goal themes. Every card is written as a SMART goal and designed to be adapted into your plan.</p>
+            <div class="panel guidance-controls">
+              <label>
+                Discipline
+                <select id="role">
+                  <option>Copywriter</option>
+                  <option>Art Director</option>
+                  <option>Designer</option>
+                  <option>Motion Designer</option>
+                </select>
+              </label>
+              <p>Cards update to show the kinds of craft outputs that discipline can actually make, present, test, refine, and show as evidence.</p>
+            </div>
+          </div>
+          <div class="rocket-stage" aria-hidden="true">
+            <img class="rocket-visual" src="assets/red-rocket-small.png" alt="">
+          </div>
+        </div>
+        <div class="theme-filters" role="group" aria-label="Goal theme filters">
+          <button class="theme-filter active" type="button" data-theme="culture">Born in Culture Impact</button>
+          <button class="theme-filter" type="button" data-theme="relationships">Order Makers</button>
+          <button class="theme-filter" type="button" data-theme="ai">AI Advantage</button>
+          <button class="theme-filter" type="button" data-theme="craft">Core Excellence</button>
+        </div>
+        <div class="recommendations" id="recommendationCards" aria-live="polite"></div>
+      </section>
 
-      <div id="recommendationCards" class="goal-grid"></div>
-      <div class="rocket-visual" aria-hidden="true"></div>
-    </section>
+      <section class="plan-section" id="plan">
+        <div class="section-title">
+          <p class="eyebrow">My 2026 plan</p>
+          <h2>Goal Builder</h2>
+          <p class="section-copy">Remember to edit these goals to make them relevant and challenging for you.</p>
+        </div>
+        <div class="plan-layout">
+          <div class="panel goal-editor">
+            <label>
+              Goal area
+              <select id="goalArea"></select>
+            </label>
+            <label>
+              Specific
+              <textarea id="specificText" rows="3"></textarea>
+            </label>
+            <div class="field-grid">
+              <label>
+                Measurable
+                <textarea id="measurableText" rows="3"></textarea>
+              </label>
+              <label>
+                Achievable
+                <textarea id="achievableText" rows="3"></textarea>
+              </label>
+              <label>
+                Relevant
+                <textarea id="relevantText" rows="3"></textarea>
+              </label>
+              <label>
+                Timeous
+                <textarea id="timeousText" rows="3"></textarea>
+              </label>
+            </div>
+            <button class="button primary" id="addGoal" type="button">Add goal</button>
+            <p class="status-message" id="goalStatus" aria-live="polite"></p>
+          </div>
 
-    <section id="plan" class="section">
-      <div class="section-header">
-        <h2>Build your plan</h2>
-      </div>
+          <div class="panel plan-output">
+            <div class="plan-header">
+              <p id="goalCount">0 goals added</p>
+              <div class="action-row small">
+                <button class="button secondary" id="copyPlan" type="button">Copy</button>
+                <button class="button secondary" id="printPlan" type="button">Print</button>
+              </div>
+            </div>
+            <div id="planList" class="plan-list"></div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-      <div class="action-row">
-        <label for="goalArea">Goal area</label>
-        <select id="goalArea"></select>
-      </div>
+    <footer>
+      <p>Ogilvy C2 Career Goal Framework</p>
+    </footer>
 
-      <label for="specificText">Specific</label>
-      <textarea id="specificText" rows="3"></textarea>
-      <label for="measurableText">Measurable</label>
-      <textarea id="measurableText" rows="3"></textarea>
-      <label for="achievableText">Achievable</label>
-      <textarea id="achievableText" rows="3"></textarea>
-      <label for="relevantText">Relevant</label>
-      <textarea id="relevantText" rows="3"></textarea>
-      <label for="timeousText">Timeous</label>
-      <textarea id="timeousText" rows="3"></textarea>
-
-      <div class="action-row">
-        <button id="addGoal" class="button primary" type="button">Add goal</button>
-        <button id="copyPlan" class="button" type="button">Copy plan</button>
-        <button id="printPlan" class="button" type="button">Print</button>
-      </div>
-
-      <p id="goalStatus" role="status" aria-live="polite"></p>
-      <p id="goalCount"></p>
-      <div id="planList"></div>
-    </section>
-  </main>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js?v=section-polish"></script>
+  </body>
 </html>
