@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Career Goals | Ogilvy C2</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Ogilvy C2 • 2026 Planner</p>
+        <h1>Creative Career Goals</h1>
+        <p class="intro">Browse SMART goal examples by role and priority theme, then build a personal 2026 growth plan.</p>
+      </div>
+    </section>
+
+    <section id="recommendations" class="section">
+      <div class="section-header">
+        <h2>Goal Browser</h2>
+        <p class="section-copy">Choose a role and theme to load curated examples you can adapt.</p>
+      </div>
+
+      <div class="action-row">
+        <label for="role">Role</label>
+        <select id="role">
+          <option>Copywriter</option>
+          <option>Art Director</option>
+          <option>Designer</option>
+          <option>Motion Designer</option>
+        </select>
+      </div>
+
+      <div class="action-row" aria-label="Theme filters">
+        <button type="button" class="theme-filter active" data-theme="culture">Born in Culture Impact</button>
+        <button type="button" class="theme-filter" data-theme="relationships">Order Makers</button>
+        <button type="button" class="theme-filter" data-theme="ai">AI Advantage</button>
+        <button type="button" class="theme-filter" data-theme="craft">Core Excellence</button>
+      </div>
+
+      <div id="recommendationCards" class="goal-grid"></div>
+      <div class="rocket-visual" aria-hidden="true"></div>
+    </section>
+
+    <section id="plan" class="section">
+      <div class="section-header">
+        <h2>Build your plan</h2>
+      </div>
+
+      <div class="action-row">
+        <label for="goalArea">Goal area</label>
+        <select id="goalArea"></select>
+      </div>
+
+      <label for="specificText">Specific</label>
+      <textarea id="specificText" rows="3"></textarea>
+      <label for="measurableText">Measurable</label>
+      <textarea id="measurableText" rows="3"></textarea>
+      <label for="achievableText">Achievable</label>
+      <textarea id="achievableText" rows="3"></textarea>
+      <label for="relevantText">Relevant</label>
+      <textarea id="relevantText" rows="3"></textarea>
+      <label for="timeousText">Timeous</label>
+      <textarea id="timeousText" rows="3"></textarea>
+
+      <div class="action-row">
+        <button id="addGoal" class="button primary" type="button">Add goal</button>
+        <button id="copyPlan" class="button" type="button">Copy plan</button>
+        <button id="printPlan" class="button" type="button">Print</button>
+      </div>
+
+      <p id="goalStatus" role="status" aria-live="polite"></p>
+      <p id="goalCount"></p>
+      <div id="planList"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
